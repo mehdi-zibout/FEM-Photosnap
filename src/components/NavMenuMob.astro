@@ -1,0 +1,55 @@
+---
+import Button from "./Button.astro";
+import Logo from "./svgs/Logo.astro";
+import Menu from "./svgs/Menu.astro";
+import Close from "./svgs/Close.astro";
+const navItems = [
+  { title: "stories", link: "#" },
+  { title: "features", link: "#" },
+  { title: "pricing", link: "#" },
+];
+---
+
+<div class="" class="mobile-menu">
+  <header
+    class="flex justify-between items-center py-7 desktop:px-40 tablet:px-10 px-6"
+  >
+    <div class="">
+      <Logo />
+    </div>
+    <button class="block tablet:hidden" id="mobile-menu-button">
+      <Menu class="mobile-menu" />
+      <Close class="hidden mobile-menu" />
+    </button>
+  </header>
+  <div class="w-full tablet:hidden px-8 pt-8">
+    <ul
+      class="text-center border-b border-black border-opacity-25 transition-all duration-1000"
+    >
+      {
+        navItems.map((navItem) => (
+          <li class="hover:text-light-grey mb-5 uppercase font-bold text-[0.75rem] leading-[1.22rem] tracking-[2.5px]">
+            <a href={navItem.link}>{navItem.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-5 pb-8">
+      <Button
+        customClass={"block text-center h-12 flex justify-center items-center"}
+        isDark
+      >
+        get an invite
+      </Button>
+    </div>
+  </div>
+</div>
+<script>
+  document
+    .getElementById("mobile-menu-button")
+    ?.addEventListener("click", () => {
+      document
+        .querySelectorAll(".mobile-menu")
+        ?.forEach((element) => element.classList.toggle("hidden"));
+    });
+</script>

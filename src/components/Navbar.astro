@@ -5,13 +5,13 @@ import Menu from "./svgs/Menu.astro";
 import Close from "./svgs/Close.astro";
 const navItems = [
   { title: "stories", link: "#" },
-  { title: "features", link: "#" },
+  { title: "features", link: "#features" },
   { title: "pricing", link: "#" },
 ];
 ---
 
 <header
-  class="flex justify-between items-center py-7 desktop:px-40 tablet:px-10 px-6"
+  class="flex justify-between items-center py-7 desktop:px-40 tablet:px-10 px-6 bg-white"
 >
   <div class="">
     <Logo />
@@ -33,28 +33,29 @@ const navItems = [
     <Close class="hidden mobile-menu" />
   </button>
 </header>
-<div class="mobile-menu w-full tablet:hidden px-8 hidden pt-8">
-  <ul
-    class="tablet:hidden text-center border-b border-black border-opacity-25 transition-all duration-1000"
-  >
-    {
-      navItems.map((navItem) => (
-        <li class="hover:text-light-grey mb-5 uppercase font-bold text-[0.75rem] leading-[1.22rem] tracking-[2.5px]">
-          <a href={navItem.link}>{navItem.title}</a>
-        </li>
-      ))
-    }
-  </ul>
-  <div class="mt-5 mb-8">
-    <Button
-      customClass={"block text-center h-12 flex justify-center items-center"}
-      isDark
+<div class="tablet:hidden" id="navbar">
+  <div class="mobile-menu w-full tablet:hidden px-8 hidden pt-8 bg-white">
+    <ul
+      class="tablet:hidden text-center border-b border-black border-opacity-25 transition-all duration-1000"
     >
-      get an invite
-    </Button>
+      {
+        navItems.map((navItem) => (
+          <li class="hover:text-light-grey mb-5 uppercase font-bold text-[0.75rem] leading-[1.22rem] tracking-[2.5px]">
+            <a href={navItem.link}>{navItem.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-5 pb-8">
+      <Button
+        customClass={"block text-center h-12 flex justify-center items-center"}
+        isDark
+      >
+        get an invite
+      </Button>
+    </div>
   </div>
 </div>
-
 <script>
   document
     .getElementById("mobile-menu-button")
@@ -62,6 +63,18 @@ const navItems = [
       document
         .querySelectorAll(".mobile-menu")
         ?.forEach((element) => element.classList.toggle("hidden"));
-      console.log("clicked");
+      document.getElementById("navbar")?.classList.toggle("mobile_navbar");
     });
+  document.getElementById("navbar")?.addEventListener("click", () => {
+    document
+      .querySelectorAll(".mobile-menu")
+      ?.forEach((element) => element.classList.toggle("hidden"));
+    document.getElementById("navbar")?.classList.toggle("mobile_navbar");
+  });
 </script>
+
+<style>
+  .mobile_navbar {
+    @apply w-screen h-screen absolute top-14 bg-black bg-opacity-50;
+  }
+</style>
