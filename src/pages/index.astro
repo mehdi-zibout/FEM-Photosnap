@@ -1,11 +1,26 @@
 ---
+import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="text-9xl">
+  <main class="text-9xl bg-main-accent">
     Hello, World!
 
     <div class="bg-main-accent w-10 h-10 rounded-full"></div>
+    <div class="m-8">
+      <Button>button 1</Button>
+    </div>
+    <div class="m-8">
+      <Button isDark>button 1</Button>
+    </div>
+
+    <div class="m-8">
+      <Button isDark isGhost>button 1</Button>
+    </div>
+
+    <div class="m-8">
+      <Button isGhost>button 1</Button>
+    </div>
   </main>
 </Layout>

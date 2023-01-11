@@ -1,0 +1,28 @@
+---
+export interface Props {
+  isGhost?: boolean;
+  isDark?: boolean;
+  customClass?: string;
+}
+
+const { isGhost, isDark, customClass } = Astro.props;
+function getClass(): string {
+  if (isGhost) {
+    if (isDark) return "text-white hover:underline";
+    else return "text-black hover:underline";
+  } else {
+    let className = "hover:bg-light-grey hover:text-black ";
+    if (isDark) return className + "text-white bg-black";
+    else return className + "text-black bg-white";
+  }
+}
+---
+
+<a
+  href="#"
+  class={getClass() +
+    " font-bold text-[0.75rem] leading-[0.97625rem] tracking-[2px] py-3 px-6 uppercase transition duration-300 " +
+    customClass}
+>
+  <slot />
+</a>
