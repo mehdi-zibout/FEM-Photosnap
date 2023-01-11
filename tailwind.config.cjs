@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens: {
+      desktop: "1200px",
+      tablet: "720px",
+    },
     colors: {
       black: "#000",
       "light-grey": "#DFDFDF",
