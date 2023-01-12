@@ -51,8 +51,10 @@ const navItems = [
         .querySelectorAll(".mobile-menu")
         ?.forEach((element) => element.classList.toggle("hidden"));
       document.getElementById("navbar")?.classList.toggle("mobile_navbar");
+      document.getElementById("root")?.classList.toggle("overflow-y-hidden");
     });
   document.getElementById("navbar")?.addEventListener("click", () => {
+    document.getElementById("root")?.classList.toggle("overflow-y-hidden");
     document
       .querySelectorAll(".mobile-menu")
       ?.forEach((element) => element.classList.toggle("hidden"));
@@ -62,6 +64,6 @@ const navItems = [
 
 <style>
   .mobile_navbar {
-    @apply w-screen h-screen absolute top-14 bg-black bg-opacity-50;
+    @apply w-screen h-screen absolute z-50 top-14 bg-black bg-opacity-50;
   }
 </style>
