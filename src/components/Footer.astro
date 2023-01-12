@@ -1,0 +1,47 @@
+---
+import Button from "./Button.astro";
+import NavItems from "./NavItems.astro";
+import SocialMediaIcons from "./SocialMediaIcons.astro";
+import Logo from "./svgs/Logo.astro";
+---
+
+<footer
+  class="bg-black w-screen flex justify-between py-14 px-8 flex-col items-center h-[33.75rem] tablet:h-[17.75rem] desktop:h-[15.625rem] tablet:flex-row tablet:px-10 tablet:py-16 desktop:px-44"
+>
+  <div
+    class="flex flex-col justify-center items-center tablet:items-start relative h-full"
+  >
+    <div class="desktop:justify-between desktop:flex flex-col h-full">
+      <Logo isDark class={"mb-8 "} />
+      <div class="flex flex-col tablet:flex-col-reverse desktop:flex-row">
+        <SocialMediaIcons />
+        <div class="mb-12 desktop:mb-0"></div>
+        <NavItems
+          showHome
+          ulClassName={"text-white text-center tablet:flex desktop:block desktop:absolute top-0.5 left-[150%] desktop:text-left"}
+          liClassName={"mb-5 tablet:mb-0 tablet:mr-7 desktop:mb-5 hover:text-white hover:text-opacity-30 "}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex justify-center items-center flex-col tablet:justify-between tablet:items-end h-full"
+  >
+    <Button customClass={"pr-0"} isDark isGhost>
+      GET AN INVITE<svg
+        class="inline-block ml-5"
+        width="42"
+        height="14"
+        viewBox="0 0 42 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 7H41.864" stroke="white"></path>
+        <path d="M35.4282 1L41.4282 7L35.4282 13" stroke="white"></path>
+      </svg>
+    </Button>
+    <p class="text-white text-opacity-50 mt-8">
+      Copyright 2023. All Rights Reserved
+    </p>
+  </div>
+</footer>

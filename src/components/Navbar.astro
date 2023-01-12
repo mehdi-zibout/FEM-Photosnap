@@ -3,6 +3,7 @@ import Button from "./Button.astro";
 import Logo from "./svgs/Logo.astro";
 import Menu from "./svgs/Menu.astro";
 import Close from "./svgs/Close.astro";
+import NavItems from "./NavItems.astro";
 const navItems = [
   { title: "stories", link: "#" },
   { title: "features", link: "#features" },
@@ -16,15 +17,7 @@ const navItems = [
   <div class="">
     <Logo />
   </div>
-  <ul class="hidden tablet:flex">
-    {
-      navItems.map((navItem) => (
-        <li class="mr-9 hover:text-light-grey last:mr-0 uppercase font-bold text-[0.75rem] leading-[0.97625rem] tracking-[2px]">
-          <a href={navItem.link}>{navItem.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <NavItems ulClassName={"hidden tablet:flex"} liClassName={"mr-9 last:mr-0"} />
   <div class="hidden tablet:block">
     <Button isDark>get an invite</Button>
   </div>
@@ -35,17 +28,11 @@ const navItems = [
 </header>
 <div class="tablet:hidden" id="navbar">
   <div class="mobile-menu w-full tablet:hidden px-8 hidden pt-8 bg-white">
-    <ul
-      class="tablet:hidden text-center border-b border-black border-opacity-25 transition-all duration-1000"
-    >
-      {
-        navItems.map((navItem) => (
-          <li class="hover:text-light-grey mb-5 uppercase font-bold text-[0.75rem] leading-[1.22rem] tracking-[2.5px]">
-            <a href={navItem.link}>{navItem.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    <NavItems
+      ulClassName={"tablet:hidden text-center border-b border-black border-opacity-25 transition-all duration-1000"}
+      liClassName={"mb-5"}
+    />
+
     <div class="mt-5 pb-8">
       <Button
         customClass={"block text-center h-12 flex justify-center items-center"}

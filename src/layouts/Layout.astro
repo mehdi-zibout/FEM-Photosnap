@@ -3,6 +3,7 @@ export interface Props {
   title: string;
 }
 import "@fontsource/dm-sans";
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import NavMenuMob from "../components/NavMenuMob.astro";
 const { title } = Astro.props;
@@ -17,8 +18,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>

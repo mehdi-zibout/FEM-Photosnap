@@ -1,0 +1,30 @@
+---
+export interface Props {
+  ulClassName?: string;
+  liClassName?: string;
+  showHome?: boolean;
+}
+const navItems = [
+  { title: "stories", link: "#" },
+  { title: "features", link: "#features" },
+  { title: "pricing", link: "#" },
+];
+
+const { ulClassName, liClassName, showHome } = Astro.props;
+if (showHome) navItems.unshift({ title: "home", link: "/" });
+---
+
+<ul class={ulClassName}>
+  {
+    navItems.map((navItem) => (
+      <li
+        class={
+          " hover:text-light-grey  uppercase font-bold text-[0.75rem] leading-[0.97625rem] tracking-[2px] " +
+          liClassName
+        }
+      >
+        <a href={navItem.link}>{navItem.title}</a>
+      </li>
+    ))
+  }
+</ul>
