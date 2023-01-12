@@ -1,54 +1,82 @@
 ---
 import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="text-9xl">
-    Hello, World!
-
-    <div class="bg-main-accent w-10 h-10 rounded-full"></div>
-    <div class="m-8">
-      <Button>button 1</Button>
-    </div>
-    <div class="m-8">
-      <Button isDark>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isDark isGhost>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isGhost>button 1</Button>
-    </div>
-    <div class="m-8">
-      <Button>button 1</Button>
-    </div>
-    <div class="m-8">
-      <Button isDark>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isDark isGhost>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isGhost>button 1</Button>
-    </div>
-    <div class="m-8">
-      <Button>button 1</Button>
-    </div>
-    <div class="m-8">
-      <Button isDark>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isDark isGhost>button 1</Button>
-    </div>
-
-    <div class="m-8">
-      <Button isGhost>button 1</Button>
-    </div>
+  <main class="grid grid-cols-4 relative">
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
+    <Card
+      author="Alexei Borodin"
+      date="April 11th 2020"
+      title="18 Days Voyage"
+      background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+    />
   </main>
 </Layout>
