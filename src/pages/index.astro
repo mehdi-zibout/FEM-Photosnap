@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="grid grid-cols-4 relative min-h-screen">
+  <main class="">
     <MainCard
       imageFileName="create-and-share.jpg"
       imageFolderName="home"
@@ -15,5 +15,48 @@ import Layout from "../layouts/Layout.astro";
       isHero
       button={"Get an invite"}
     />
+    <MainCard
+      imageFileName="beautiful-stories.jpg"
+      imageFolderName="home"
+      description="We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone. "
+      title="beautiful stories every time"
+      button={"VIEW THE STORIES"}
+      isReverse
+      isLight
+    />
+    <MainCard
+      imageFileName="designed-for-everyone.jpg"
+      imageFolderName="home"
+      description="Photosnap can help you create stories that resonate with your audience.  Our tool is designed for photographers of all levels, brands, businesses you name it. "
+      title="DESIGNED FOR EVERYONE"
+      button={"VIEW THE STORIES"}
+      isLight
+    />
+    <div class="tablet:grid grid-cols-2 desktop:grid-cols-4">
+      <Card
+        author="by John Appleseed"
+        date=""
+        title="The Mountains"
+        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/mountains.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/mountains.jpg)]"
+      />
+      <Card
+        author="by Benjamin Cruz"
+        date=""
+        title="Sunset Cityscapes"
+        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/cityscapes.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/cityscapes.jpg)]"
+      />
+      <Card
+        author="by Alexei Borodin"
+        date=""
+        title="18 Days Voyage"
+        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
+      />
+      <Card
+        author="by Samantha Brooke"
+        date=""
+        title="Architecturals"
+        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/architecturals.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/architecturals.jpg)]"
+      />
+    </div>
   </main>
 </Layout>
