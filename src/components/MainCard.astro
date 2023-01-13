@@ -1,0 +1,78 @@
+---
+import Button from "./Button.astro";
+export type Props = {
+  imageFileName: string;
+  imageFolderName: string;
+  isHero?: boolean;
+  title: string;
+  description: string;
+  button?: string;
+};
+const { imageFileName, imageFolderName, isHero, title, description, button } =
+  Astro.props;
+// const imageLink = "create-and-share.jpg";
+---
+
+<div class="tablet:flex w-screen tablet:flex-row-reverse h-fit">
+  <div class="tablet:w-[35%] w-full desktop:w-[57%] h-fit">
+    <picture>
+      <source
+        media="(min-width: 1200px)"
+        srcset={`/${imageFolderName}/desktop/${imageFileName}`}
+      />
+      <source
+        media="(min-width: 720px)"
+        srcset={`/${imageFolderName}/tablet/${imageFileName}`}
+      />
+      <img
+        class="w-full"
+        src={`/${imageFolderName}/mobile/${imageFileName}`}
+        alt="create and share"
+      />
+    </picture>
+  </div>
+  <div class="bg-black flex-1 flex justify-center items-center relative">
+    <div class="h-1.5 w-1/3 bg-main-accent tablet:hidden absolute top-0 left-8">
+    </div>
+    <div
+      class="desktop:px-[7rem] tablet:px-14 tablet:border-l-[6px] pl-8 pr-6 py-[4.5rem] tablet:py-0"
+      style={{
+        borderImage:
+          "linear-gradient(26.57deg, #FFC593 0%, #BC7198 43.29%, #5A77FF 83.33%) 6",
+      }}
+    >
+      <h2 class="text-h1 text-white uppercase">
+        {title}
+      </h2>
+      <p
+        class={`text-opacity-60 text-white text-body pt-5 ${
+          button ? "pb-12" : ""
+        }`}
+      >
+        {description}
+      </p>
+      {
+        button && (
+          <Button
+            customClass={"text-left pl-0 pb-0 flex justify-start items-center"}
+            isDark
+            isGhost
+          >
+            <div class="">{button}</div>
+            <svg
+              class="inline-block ml-5"
+              width="42"
+              height="14"
+              viewBox="0 0 42 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 7H41.864" stroke="white" />
+              <path d="M35.4282 1L41.4282 7L35.4282 13" stroke="white" />
+            </svg>
+          </Button>
+        )
+      }
+    </div>
+  </div>
+</div>
