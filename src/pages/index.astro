@@ -1,6 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
+import FeatureCard from "../components/FeatureCard.astro";
 import MainCard from "../components/MainCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -56,6 +57,28 @@ import Layout from "../layouts/Layout.astro";
         date=""
         title="Architecturals"
         background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/architecturals.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/architecturals.jpg)]"
+      />
+    </div>
+    <div
+      class="tablet:py-28 py-20 desktop:grid desktop:grid-cols-3 px-8 tablet:px-36 desktop:px-40"
+    >
+      <FeatureCard
+        className={"tablet:pb-20 desktop:pb-0 pb-14"}
+        description={"No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen."}
+        title="100% Responsive"
+        icon="/features/desktop/responsive.svg"
+      />
+      <FeatureCard
+        className={"tablet:pb-20 desktop:pb-0 pb-14"}
+        description={"Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."}
+        title="No Photo Upload Limit"
+        icon="/features/desktop/no-limit.svg"
+        iconClass="mb-4"
+      />
+      <FeatureCard
+        description={"Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more. "}
+        title="Available to Embed"
+        icon="/features/desktop/embed.svg"
       />
     </div>
   </main>
