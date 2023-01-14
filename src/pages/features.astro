@@ -1,0 +1,55 @@
+---
+import Card from "../components/Card.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import GetInvite from "../components/GetInvite.astro";
+import MainCard from "../components/MainCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="">
+    <MainCard
+      imageFileName="hero.jpg"
+      imageFolderName="features"
+      description="We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories."
+      title="FEATURES"
+      isHero
+    />
+    <div
+      class="grid tablet:grid-cols-2 desktop:grid-cols-3 py-16 px-8 tablet:py-28 tablet:px-9 desktop:p-40 desktop:gap-y-24 desktop:gap-x-8 tablet:gap-y-16 tablet:gap-x-3 gap-14"
+    >
+      <FeatureCard
+        description={"No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen."}
+        title="100% Responsive"
+        icon="/features/desktop/responsive.svg"
+      />
+      <FeatureCard
+        description={"Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."}
+        title="No Photo Upload Limit"
+        icon="/features/desktop/no-limit.svg"
+        iconClass="mb-4"
+      />
+      <FeatureCard
+        description={"Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more. "}
+        title="Available to Embed"
+        icon="/features/desktop/embed.svg"
+      />
+      <FeatureCard
+        description={"With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding!"}
+        title="Custom Domain"
+        icon="/features/desktop/custom-domain.svg"
+      />
+      <FeatureCard
+        description={"Users that viewed your story or gallery can easily get notifed of new and featured stories with our built in mailing list."}
+        title="Boost Your Exposure"
+        icon="/features/desktop/boost-exposure.svg"
+      />
+      <FeatureCard
+        description={"Easily drag and drop your image and get beautiful shots everytime. No over the top tooling to add friction to creating stories."}
+        title="Drag & Drop Image"
+        icon="/features/desktop/drag-drop.svg"
+      />
+    </div>
+    <GetInvite />
+  </main>
+</Layout>

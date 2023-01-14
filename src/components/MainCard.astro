@@ -20,7 +20,6 @@ const {
   isLight,
   isReverse,
 } = Astro.props;
-// const imageLink = "create-and-share.jpg";
 ---
 
 <div
@@ -67,7 +66,11 @@ const {
       <h2 class="tablet:text-h1 text-h1 text-[2rem] uppercase">
         {title}
       </h2>
-      <p class={`text-opacity-60  text-body pt-5 ${button ? "pb-12" : ""}`}>
+      <p
+        class={`text-opacity-60 ${
+          isLight ? "text-black" : "text-white"
+        }  text-body pt-5 ${button ? "pb-12" : ""}`}
+      >
         {description}
       </p>
       {
