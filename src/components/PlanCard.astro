@@ -4,8 +4,12 @@ import Button from "./Button.astro";
 export type Props = {
   isPro?: boolean;
   className?: string;
+  title: string;
+  description: string;
+  price: number;
+  isYearly?: boolean;
 };
-const { isPro, className } = Astro.props;
+const { isPro, className, title, description, price, isYearly } = Astro.props;
 ---
 
 <div
@@ -23,15 +27,14 @@ const { isPro, className } = Astro.props;
     class="tablet:flex tablet:justify-between tablet:items-start tablet:text-left desktop:text-center desktop:block"
   >
     <div class="pb-10 tablet:w-[43%] desktop:w-full">
-      <h4 class="text-h2">Basic</h4>
+      <h4 class="text-h2">{title}</h4>
       <p class="text-body opacity-60 pt-4">
-        Includes basic usage of our platform. Recommended for new and aspiring
-        photographers.
+        {description}
       </p>
     </div>
     <div class="pb-10 tablet:text-right desktop:text-center">
-      <h4 class="text-h1">$19.00</h4>
-      <p class="text-body opacity-60">per month</p>
+      <h4 class="text-h1">${price.toFixed(2)}</h4>
+      <p class="text-body opacity-60">{isYearly ? "per year" : "per month"}</p>
     </div>
   </div>
   <Button

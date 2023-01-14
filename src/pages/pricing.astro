@@ -16,9 +16,23 @@ import Layout from "../layouts/Layout.astro";
     <div
       class="flex items-center justify-center desktop:flex-row flex-col desktop:px-40 tablet:px-10 px-8"
     >
-      <PlanCard />
-      <PlanCard isPro className="desktop:mx-8 my-6 desktop:my-0" />
-      <PlanCard />
+      <PlanCard
+        description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
+        price={19}
+        title="Basic"
+      />
+      <PlanCard
+        description={`More advanced features available. Recommended for photography veterans and professionals.`}
+        price={39}
+        title="Pro"
+        isPro
+        className="desktop:mx-8 my-6 desktop:my-0"
+      />
+      <PlanCard
+        title="Business"
+        price={99}
+        description="Additional features available such as more detailed metrics. Recommended for business owners."
+      />
     </div>
 
     <!-- <GetInvite /> -->
