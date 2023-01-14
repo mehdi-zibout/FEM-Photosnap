@@ -1,15 +1,129 @@
 ---
 import Card from "../components/Card.astro";
-import FeatureCard from "../components/FeatureCard.astro";
 import FocusedStory from "../components/FocusedStory.astro";
-import GetInvite from "../components/GetInvite.astro";
-import MainCard from "../components/MainCard.astro";
 import Layout from "../layouts/Layout.astro";
+const stories = [
+  {
+    author: "John Appleseed",
+    date: "April 16th 2020",
+    title: "The Mountains",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/mountains.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/mountains.jpg)]",
+  },
+  {
+    author: "Benjamin Cruz",
+    date: "April 14th 2020",
+    title: "Sunset Cityscapes",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/cityscapes.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/cityscapes.jpg)]",
+  },
+  {
+    author: "Alexei Borodin",
+    date: "April 11th 2020",
+    title: "18 Days Voyage",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]",
+  },
+  {
+    author: "Samantha Brooke",
+    date: "April 9th 2020",
+    title: "Architecturals",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/architecturals.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/architecturals.jpg)]",
+  },
+  {
+    author: "Timothy Wagner",
+    date: "April 7th 2020",
+    title: "World Tour 2019",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/world-tour.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/world-tour.jpg)]",
+  },
+  {
+    author: "William Malcolm",
+    date: "April 3rd 2020",
+    title: "Unforeseen Corners",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/unforeseen-corners.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/unforeseen-corners.jpg)]",
+  },
+  {
+    author: "Tim Hillenburg",
+    date: "March 29th 2020",
+    title: "King on Africa: Part II",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/king-on-africa.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/king-on-africa.jpg)]",
+  },
+  {
+    author: "Felicia Rourke",
+    date: "March 21st 2020",
+    title: "The Trip to Nowhere",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/trip-to-nowhere.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/trip-to-nowhere.jpg)]",
+  },
+  {
+    author: "Mohammed Abdul",
+    date: "March 19th 2020",
+    title: "Rage of The Sea",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/rage-of-the-sea.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/rage-of-the-sea.jpg)]",
+  },
+  {
+    author: "Michelle",
+    date: "March 16th 2020",
+    title: "Running Free",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/running-free.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/running-free.jpg)]",
+  },
+  {
+    author: "Lamarr Wilson",
+    date: "March 11th 2020",
+    title: "Behind the Waves",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/behind-the-waves.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/behind-the-waves.jpg)]",
+  },
+  {
+    author: "Samantha Brooke",
+    date: "March 9th 2020",
+    title: "Calm Waters",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/calm-waters.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/calm-waters.jpg)]",
+  },
+  {
+    author: "Benjamin Cruz",
+    date: "March 5th 2020",
+    title: "The Milky Way",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/milky-way.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/milky-way.jpg)]",
+  },
+  {
+    author: "Mohammed Abdul",
+    date: "March 4th 2020",
+    title: "Night at The Dark Forest",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/dark-forest.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/dark-forest.jpg)]",
+  },
+  {
+    author: "Michelle",
+    date: "March 1st 2020",
+    title: "Somwarpet’s Beauty",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/somwarpet.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/somwarpet.jpg)]",
+  },
+  {
+    author: "William Malcolm",
+    date: "February 25th 2020",
+    title: "Land of Dreams",
+    background:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/land-of-dreams.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/land-of-dreams.jpg)]",
+  },
+];
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="">
     <FocusedStory />
+    <div class="grid tablet:grid-cols-2 desktop:grid-cols-4">
+      {stories.map((story) => <Card {...story} />)}
+    </div>
     <!-- <GetInvite /> -->
   </main>
 </Layout>
