@@ -1,0 +1,55 @@
+---
+import Button from "./Button.astro";
+
+const title = "HAZY FULL MOON OF APPALACHIA";
+const date = "March 2nd 2020";
+const author = "John Appleseed";
+const description = `The dissected plateau area, while not actually made up of geological mountains, is popularly called "mountains," especially in eastern Kentucky and West Virginia, and while the ridges are not high, the terrain is extremely rugged.`;
+---
+
+<div
+  class="w-screen bg-black bg-cover tablet:bg-[url(/stories/tablet/moon-of-appalacia.jpg)] desktop:bg-[url(/stories/desktop/moon-of-appalacia.jpg)]"
+>
+  <img
+    src="/stories/mobile/moon-of-appalacia.jpg"
+    alt={title}
+    class="w-full tablet:hidden"
+  />
+  <div
+    class="text-white py-12 px-7 tablet:py-32 tablet:pl-10 desktop:pl-28 tablet:w-[60%] desktop:w-[35%]"
+  >
+    <h6
+      class="leading-[0.97rem] tracking-[2px] font-bold text-[0.75rem] uppercase"
+    >
+      LAST MONTH’S FEATURED STORY
+    </h6>
+    <h1
+      class="py-4 tablet:pt-6 uppercase font-bold tracking-[3.33px] leading-[2.5rem] text-[2rem] tablet:text-h1"
+    >
+      {title}
+    </h1>
+    <p class="leading-[1.05rem] text-[0.81rem] text-white text-opacity-75">
+      {date}
+      <span class="text-opacity-100 text-white">by {author}</span>
+    </p>
+    <p class="py-6 text-body text-white text-opacity-60">{description}</p>
+    <Button
+      isGhost
+      customClass="flex justify-start items-center pl-0 pt-0 pb-0"
+    >
+      <div class="text-white hover:underline">READ THE STORY</div>
+      <svg
+        class={`inline-block ml-5 stroke-white
+              }`}
+        width="42"
+        height="14"
+        viewBox="0 0 42 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 7H41.864"></path>
+        <path d="M35.4282 1L41.4282 7L35.4282 13"></path>
+      </svg>
+    </Button>
+  </div>
+</div>

@@ -13,7 +13,7 @@ const { title, description, icon, iconClass, className } = Astro.props;
   class={"text-center flex justify-end items-center flex-col desktop:px-8 " +
     className}
 >
-  <img src={icon} class={iconClass} />
+  <img src={icon} class={iconClass} alt={title} />
   <h3 class="text-h3 pt-12 mb-4">{title}</h3>
   <p class="text-body text-opacity-60 text-black">
     {description}
