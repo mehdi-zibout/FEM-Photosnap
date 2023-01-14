@@ -5,6 +5,8 @@ import FeatureCard from "../components/FeatureCard.astro";
 import GetInvite from "../components/GetInvite.astro";
 import MainCard from "../components/MainCard.astro";
 import Layout from "../layouts/Layout.astro";
+import { stories } from "./stories.astro";
+const latestStories = stories.slice(0, 4);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -35,30 +37,7 @@ import Layout from "../layouts/Layout.astro";
       isLight
     />
     <div class="tablet:grid grid-cols-2 desktop:grid-cols-4">
-      <Card
-        author="by John Appleseed"
-        date=""
-        title="The Mountains"
-        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/mountains.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/mountains.jpg)]"
-      />
-      <Card
-        author="by Benjamin Cruz"
-        date=""
-        title="Sunset Cityscapes"
-        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/cityscapes.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/cityscapes.jpg)]"
-      />
-      <Card
-        author="by Alexei Borodin"
-        date=""
-        title="18 Days Voyage"
-        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/18-days-voyage.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/18-days-voyage.jpg)]"
-      />
-      <Card
-        author="by Samantha Brooke"
-        date=""
-        title="Architecturals"
-        background="bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/mobile/architecturals.jpg)] tablet:bg-[linear-gradient(180deg,rgba(0,0,0,0.0001)0.27%,rgba(0,0,0,0.661222)_100%),url(/stories/desktop/architecturals.jpg)]"
-      />
+      {latestStories.map((story) => <Card {...story} />)}
     </div>
     <div
       class="tablet:py-28 py-20 desktop:grid desktop:grid-cols-3 px-8 tablet:px-36 desktop:px-40"

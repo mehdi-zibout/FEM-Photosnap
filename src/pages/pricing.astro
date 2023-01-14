@@ -1,0 +1,26 @@
+---
+import MainCard from "../components/MainCard.astro";
+import PlanCard from "../components/PlanCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="">
+    <MainCard
+      imageFileName="hero.jpg"
+      imageFolderName="pricing"
+      description="Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos."
+      title="PRICING"
+      isHero
+    />
+    <div
+      class="flex items-center justify-center desktop:flex-row flex-col desktop:px-40 tablet:px-10 px-8"
+    >
+      <PlanCard />
+      <PlanCard isPro className="desktop:mx-8 my-6 desktop:my-0" />
+      <PlanCard />
+    </div>
+
+    <!-- <GetInvite /> -->
+  </main>
+</Layout>
