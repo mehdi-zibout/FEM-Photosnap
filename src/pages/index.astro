@@ -27,6 +27,7 @@ const latestStories = stories.slice(0, 4);
       button={"VIEW THE STORIES"}
       isReverse
       isLight
+      href="/stories"
     />
     <MainCard
       imageFileName="designed-for-everyone.jpg"
@@ -35,6 +36,7 @@ const latestStories = stories.slice(0, 4);
       title="DESIGNED FOR EVERYONE"
       button={"VIEW THE STORIES"}
       isLight
+      href="/stories"
     />
     <div class="tablet:grid grid-cols-2 desktop:grid-cols-4">
       {latestStories.map((story) => <Card {...story} />)}

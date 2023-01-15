@@ -3,9 +3,10 @@ export interface Props {
   isGhost?: boolean;
   isDark?: boolean;
   customClass?: string;
+  href?: string;
 }
 
-const { isGhost, isDark, customClass } = Astro.props;
+const { isGhost, isDark, customClass, href } = Astro.props;
 function getClass(): string {
   if (isGhost) {
     if (isDark) return "text-white hover:underline";
@@ -19,7 +20,7 @@ function getClass(): string {
 ---
 
 <a
-  href="#"
+  href={href || "#"}
   class={getClass() +
     " font-bold text-[0.75rem] leading-[0.97625rem] tracking-[2px] py-3 px-6 uppercase transition duration-300 " +
     customClass}

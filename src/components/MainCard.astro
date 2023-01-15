@@ -9,6 +9,7 @@ export type Props = {
   button?: string;
   isLight?: boolean;
   isReverse?: boolean;
+  href?: string;
 };
 const {
   imageFileName,
@@ -19,6 +20,7 @@ const {
   button,
   isLight,
   isReverse,
+  href,
 } = Astro.props;
 ---
 
@@ -76,6 +78,7 @@ const {
       {
         button && (
           <Button
+            href={href}
             customClass={"text-left pl-0 pb-0 flex justify-start items-center"}
             isDark={!isLight}
             isGhost
