@@ -1,0 +1,61 @@
+---
+import Check from "./svgs/Check.astro";
+
+const features = [
+  {
+    title: "UNLIMITED STORY POSTING",
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  { title: "UNLIMITED PHOTO UPLOAD", basic: true, pro: true, business: true },
+  {
+    title: "EMBEDDING CUSTOM CONTENT",
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  { title: "CUSTOMIZE METADATA", basic: false, pro: true, business: true },
+  { title: "ADVANCED METRICS", basic: false, pro: false, business: true },
+  { title: "PHOTO DOWNLOADS", basic: false, pro: false, business: true },
+  {
+    title: "SEARCH ENGINE INDEXING",
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  { title: "CUSTOM ANALYTICS", basic: false, pro: false, business: true },
+];
+---
+
+<div class="px-8 mt-16">
+  <h4
+    class="text-[0.75rem] font-bold tracking-[2px] leading-[15px] pb-6 border-b border-black"
+  >
+    THE FEATURES
+  </h4>
+
+  {
+    features.map((feature) => (
+      <div class="py-6 border-b border-light-grey">
+        <h5 class="text-[0.75rem] font-bold tracking-[2px] leading-[15px]">
+          {feature.title}
+        </h5>
+        <ul class="flex justify-between items-start">
+          <li class="mt-4 uppercase text-black text-opacity-50 text-[0.625rem] font-bold tracking-[1.67px] leading-[13.02px] ">
+            <div class="mb-2">basic</div>
+            {feature.basic && <Check />}
+          </li>
+          <li class="mt-4 uppercase text-black text-opacity-50 text-[0.625rem] font-bold tracking-[1.67px] leading-[13.02px] ">
+            <div class="mb-2">pro</div>
+            {feature.pro && <Check />}
+          </li>
+          <li class="uppercase text-black text-opacity-50 text-[0.625rem] font-bold tracking-[1.67px] leading-[13.02px] mt-4">
+            <div class="mb-2">business</div>
+            {feature.business && <Check />}
+          </li>
+        </ul>
+      </div>
+    ))
+  }
+</div>

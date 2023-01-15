@@ -3,6 +3,7 @@ import MainCard from "../components/MainCard.astro";
 import Layout from "../layouts/Layout.astro";
 import PlansContainer from "../components/Plan/PlansContainer";
 import GetInvite from "../components/GetInvite.astro";
+import CompareTable from "../components/CompareTable.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,6 +17,7 @@ import GetInvite from "../components/GetInvite.astro";
     />
     <PlansContainer client:load />
 
+    <CompareTable />
     <GetInvite />
   </main>
 </Layout>
