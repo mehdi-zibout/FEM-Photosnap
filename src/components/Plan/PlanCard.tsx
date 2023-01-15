@@ -27,7 +27,7 @@ export default function PlanCard({
       class={` px-8 text-center ${
         isPro
           ? "bg-black text-white border-t-[6px] pt-20 pb-16  tablet:border-t-0 tablet:border-l-[6px] desktop:border-l-0 desktop:border-t-[6px]"
-          : "bg-light-grey text-black pt-14 pb-10"
+          : "bg-[#F5F5F5] text-black pt-14 pb-10"
       } ${className} `}
     >
       <div class="tablet:flex tablet:justify-between tablet:items-start tablet:text-left desktop:text-center desktop:block">
