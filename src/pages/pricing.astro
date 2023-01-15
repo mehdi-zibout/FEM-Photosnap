@@ -1,7 +1,8 @@
 ---
 import MainCard from "../components/MainCard.astro";
-import PlanCard from "../components/PlanCard.astro";
 import Layout from "../layouts/Layout.astro";
+import PlansContainer from "../components/Plan/PlansContainer";
+import GetInvite from "../components/GetInvite.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,28 +14,8 @@ import Layout from "../layouts/Layout.astro";
       title="PRICING"
       isHero
     />
-    <div
-      class="flex items-center justify-center desktop:flex-row flex-col desktop:px-40 tablet:px-10 px-8"
-    >
-      <PlanCard
-        description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
-        price={19}
-        title="Basic"
-      />
-      <PlanCard
-        description={`More advanced features available. Recommended for photography veterans and professionals.`}
-        price={39}
-        title="Pro"
-        isPro
-        className="desktop:mx-8 my-6 desktop:my-0"
-      />
-      <PlanCard
-        title="Business"
-        price={99}
-        description="Additional features available such as more detailed metrics. Recommended for business owners."
-      />
-    </div>
+    <PlansContainer client:load />
 
-    <!-- <GetInvite /> -->
+    <GetInvite />
   </main>
 </Layout>
